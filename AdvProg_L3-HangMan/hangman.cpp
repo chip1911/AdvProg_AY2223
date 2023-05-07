@@ -52,12 +52,12 @@ vector<string> readWordListFromFile(const string& filePath)
 bool isCharInWord(const char ch, const string& word)
 {
     // TODO: return true if ch is in word else return false
-    bool result = false;
-    for(int i = 0; i < (int)word.size(); ++i)
+    int n = word.length();
+    for(int i = 0; i < n; ++i)
     {
-        if(word[i] == ch) result = true;
+        if(word[i] == ch) return true;
     }
-    return result;
+    return false;
 }
 
 /***
@@ -116,7 +116,7 @@ void updateSecretWord(string& secretWord, const char ch, const string& word)
 {
     // TODO: Update the secret word if the character ch is in the answer word.
     int n = word.length();
-    for(int i = 0; i < n ; i++)
+    for(int i = 0; i < n ; ++i)
     {
         if(word[i] == ch)
         {
@@ -134,9 +134,7 @@ void updateSecretWord(string& secretWord, const char ch, const string& word)
 ***/
 void updateEnteredChars(const char ch, string& chars){
     // TODO: append the character ch is in end of the text chars
-    chars.push_back(ch);
-    char b = ' ';
-    chars.push_back(b);
+    chars = chars + ch + " ";
 }
 
 /***
