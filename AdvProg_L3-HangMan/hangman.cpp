@@ -182,7 +182,7 @@ void processData(const char ch, const string& word,
     else
     {
         updateIncorrectGuess(incorrectGuess);
-        updateEnteredChars(ch, incorrectGuess);
+        updateEnteredChars(ch, incorrectChars);
     }
 
 }
